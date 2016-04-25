@@ -1,10 +1,15 @@
 package com.christianbahl.basekit.fragment.delegate;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import java.util.HashSet;
 
 /**
@@ -40,9 +45,22 @@ public class CBFragmentDelegateManager implements CBIFragmentDelegate {
     }
   }
 
+  @Override public void onAttach(Activity activity) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onAttach(activity);
+    }
+  }
+
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     for (CBIFragmentDelegate delegate : delegates) {
       delegate.onCreate(savedInstanceState);
+    }
+  }
+
+  @Override public void onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+      @Nullable Bundle savedInstanceState) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onCreateView(inflater, container, savedInstanceState);
     }
   }
 
@@ -55,6 +73,12 @@ public class CBFragmentDelegateManager implements CBIFragmentDelegate {
   @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     for (CBIFragmentDelegate delegate : delegates) {
       delegate.onActivityCreated(savedInstanceState);
+    }
+  }
+
+  @Override public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onViewStateRestored(savedInstanceState);
     }
   }
 
@@ -98,9 +122,30 @@ public class CBFragmentDelegateManager implements CBIFragmentDelegate {
     for (CBIFragmentDelegate delegate : delegates) {
       delegate.onDetach();
     }
+  }
 
-    // cleanup
-    delegates.clear();
-    delegates = null;
+  @Override public void onSaveInstanceState(Bundle outState) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onSaveInstanceState(outState);
+    }
+  }
+
+  @Override public void onConfigurationChanged(Configuration newConfig) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onConfigurationChanged(newConfig);
+    }
+  }
+
+  @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onActivityResult(requestCode, resultCode, data);
+    }
+  }
+
+  @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+      @NonNull int[] grantResults) {
+    for (CBIFragmentDelegate delegate : delegates) {
+      delegate.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
   }
 }

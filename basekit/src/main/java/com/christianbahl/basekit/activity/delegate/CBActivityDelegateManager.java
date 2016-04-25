@@ -1,7 +1,9 @@
 package com.christianbahl.basekit.activity.delegate;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import java.util.HashSet;
 
@@ -38,12 +40,48 @@ public class CBActivityDelegateManager implements CBIActivityDelegate {
     }
   }
 
+  @Override public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onCreate(savedInstanceState, persistentState);
+    }
+  }
+
   @Override public void onRestart() {
     for (CBIActivityDelegate delegate : delegates) {
       delegate.onRestart();
     }
   }
 
+  @Override public void onSaveInstanceState(Bundle outState) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onSaveInstanceState(outState);
+    }
+  }
+
+  @Override public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onSaveInstanceState(outState, outPersistentState);
+    }
+  }
+
+  @Override public void onRestoreInstanceState(Bundle savedInstanceState) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onRestoreInstanceState(savedInstanceState);
+    }
+  }
+
+  @Override
+  public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onRestoreInstanceState(savedInstanceState, persistentState);
+    }
+  }
+
+  @Override public void onNewIntent(Intent intent) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onNewIntent(intent);
+    }
+  }
 
   @Override public void onStart() {
     for (CBIActivityDelegate delegate : delegates) {
@@ -73,15 +111,42 @@ public class CBActivityDelegateManager implements CBIActivityDelegate {
     for (CBIActivityDelegate delegate : delegates) {
       delegate.onDestroy();
     }
-
-    // cleanup
-    delegates.clear();
-    delegates = null;
   }
 
   @Override public void onBackPressed() {
     for (CBIActivityDelegate delegate : delegates) {
       delegate.onBackPressed();
+    }
+  }
+
+  @Override public void onAttachedToWindow() {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onAttachedToWindow();
+    }
+  }
+
+  @Override public void onDetachedFromWindow() {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onDetachedFromWindow();
+    }
+  }
+
+  @Override public void onConfigurationChanged(Configuration newConfig) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onConfigurationChanged(newConfig);
+    }
+  }
+
+  @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onActivityResult(requestCode, resultCode, data);
+    }
+  }
+
+  @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+      @NonNull int[] grantResults) {
+    for (CBIActivityDelegate delegate : delegates) {
+      delegate.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
   }
 
@@ -102,5 +167,4 @@ public class CBActivityDelegateManager implements CBIActivityDelegate {
       delegate.finish();
     }
   }
-
 }
