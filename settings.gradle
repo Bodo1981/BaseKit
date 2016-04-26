@@ -1,1 +1,1 @@
-include ':sample', ':basekit'
+include ':sample', ':basekit-support', ':basekit', ':basekit-common'

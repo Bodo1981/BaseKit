@@ -9,7 +9,7 @@ import com.christianbahl.basekit.fragment.CBFragmentDelegate;
 import com.christianbahl.basekit.sample.R;
 
 /**
- * Created by bodo on 20.04.16.
+ * Created by bodo on 25.04.16.
  */
 public class FragmentDelegate extends CBFragmentDelegate {
 
@@ -24,6 +24,7 @@ public class FragmentDelegate extends CBFragmentDelegate {
   @Override protected void initDelegateManager() {
     super.initDelegateManager();
 
-    delegateManager.addDelegate(new FragmentDelegateImpl());
+    delegateManager.addDelegate(new FragmentDelegateImpl(getActivity()));
   }
+
 }

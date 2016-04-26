@@ -10,6 +10,6 @@ public class ActivityDelegate extends CBActivityDelegate {
   @Override protected void initDelegateManager() {
     super.initDelegateManager();
 
-    delegateManager.addDelegate(new ActivityDelegateImpl());
+    delegateManager.addDelegate(new ActivityDelegateImpl(this));
   }
 }

@@ -1,4 +1,4 @@
-package com.christianbahl.basekit.activity.delegate;
+package com.christianbahl.basekit.common.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;

@@ -1,21 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
-  <Button
-      android:id="@+id/button_activity"
-      android:layout_width="wrap_content"
+  <LinearLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Activity Delegation"/>
+      android:orientation="vertical"
+      android:gravity="center"
+      android:layout_gravity="center_vertical">
 
-  <Button
-      android:id="@+id/button_fragment"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Fragment Delegation"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default"/>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity Delegation"/>
+
+    <Button
+        android:id="@+id/button_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment Delegation"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Support"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/button_app_compat_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AppCompatActivity Delegation"/>
+
+    <Button
+        android:id="@+id/button_fragment_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment (Support) Delegation"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:text="IMPORTANT!"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="On Android OS >= 23 you have to allow this app to draw over other apps otherwise the app will crash when you click on a button\n\nSettings -> Apps -> Settings(right upper corner) -> Draw over others apps -> Change BaseKit app to Yes"/>
+
+  </LinearLayout>
+</ScrollView>

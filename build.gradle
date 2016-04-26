@@ -32,6 +32,7 @@ ext {
 
 buildscript {
   ext.supportVersion = "23.3.0"
+  ext.junitVersion = "4.12"
 
   repositories {
     jcenter()

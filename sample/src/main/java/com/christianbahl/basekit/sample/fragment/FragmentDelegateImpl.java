@@ -11,7 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.christianbahl.basekit.fragment.delegate.CBIFragmentDelegate;
+import com.christianbahl.basekit.common.fragment.CBIFragmentDelegate;
+import com.hannesdorfmann.debugoverlay.DebugOverlay;
 
 /**
  * Created by bodo on 20.04.16.
@@ -20,107 +21,165 @@ public class FragmentDelegateImpl implements CBIFragmentDelegate {
 
   private static final String TAG = "FragmentDelegateImpl";
 
+  private Context context;
+
+  public FragmentDelegateImpl(Context context) {
+    this.context = context;
+  }
+
   @Override public void onAttach(Context context) {
-    Log.d(TAG, "onAttach() called with: " + "context = [" + context + "]");
+    String msg = "onAttach() called with: " + "context = [" + context + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onAttach(Activity activity) {
-    Log.d(TAG, "onAttach() called with: " + "activity = [" + activity + "]");
+    String msg = "onAttach() called with: " + "activity = [" + activity + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
-    Log.d(TAG, "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
+    String msg = "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    Log.d(TAG, "onCreateView() called with: "
+    String msg = "onCreateView() called with: "
         + "inflater = ["
         + inflater
         + "], container = ["
         + container
         + "], savedInstanceState = ["
         + savedInstanceState
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-    Log.d(TAG, "onViewCreated() called with: "
+    String msg = "onViewCreated() called with: "
         + "view = ["
         + view
         + "], savedInstanceState = ["
         + savedInstanceState
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-    Log.d(TAG,
-        "onActivityCreated() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
+    String msg =
+        "onActivityCreated() called with: " + "savedInstanceState = [" + savedInstanceState + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-    Log.d(TAG, "onViewStateRestored() called with: "
-        + "savedInstanceState = ["
-        + savedInstanceState
-        + "]");
+    String msg =
+        "onViewStateRestored() called with: " + "savedInstanceState = [" + savedInstanceState + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onStart() {
-    Log.d(TAG, "onStart() called with: " + "");
+    String msg = "onStart() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onResume() {
-    Log.d(TAG, "onResume() called with: " + "");
+    String msg = "onResume() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onPause() {
-    Log.d(TAG, "onPause() called with: " + "");
+    String msg = "onPause() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onStop() {
-    Log.d(TAG, "onStop() called with: " + "");
+    String msg = "onStop() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onDestroyView() {
-    Log.d(TAG, "onDestroyView() called with: " + "");
+    String msg = "onDestroyView() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onDestroy() {
-    Log.d(TAG, "onDestroy() called with: " + "");
+    String msg = "onDestroy() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onDetach() {
-    Log.d(TAG, "onDetach() called with: " + "");
+    String msg = "onDetach() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onSaveInstanceState(Bundle outState) {
-    Log.d(TAG, "onSaveInstanceState() called with: " + "outState = [" + outState + "]");
+    String msg = "onSaveInstanceState() called with: " + "outState = [" + outState + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onConfigurationChanged(Configuration newConfig) {
-    Log.d(TAG, "onConfigurationChanged() called with: " + "newConfig = [" + newConfig + "]");
+    String msg = "onConfigurationChanged() called with: " + "newConfig = [" + newConfig + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    Log.d(TAG, "onActivityResult() called with: "
+    String msg = "onActivityResult() called with: "
         + "requestCode = ["
         + requestCode
         + "], resultCode = ["
         + resultCode
         + "], data = ["
         + data
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
       @NonNull int[] grantResults) {
-    Log.d(TAG, "onRequestPermissionsResult() called with: "
+    String msg = "onRequestPermissionsResult() called with: "
         + "requestCode = ["
         + requestCode
         + "], permissions = ["
         + permissions
         + "], grantResults = ["
         + grantResults
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - " + msg);
+    Log.d(TAG, msg);
   }
 }

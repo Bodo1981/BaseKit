@@ -27,10 +27,10 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
 
   // Testing
-  testCompile 'junit:junit:4.12'
+  testCompile "junit:junit:$junitVersion"
 
-  // Android
-  compile "com.android.support:appcompat-v7:$supportVersion"
+  // Submodules
+  compile project(':basekit-common')
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'

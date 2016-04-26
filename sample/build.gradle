@@ -24,8 +24,12 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
 
   // Testing
-  testCompile 'junit:junit:4.12'
+  testCompile "junit:junit:$junitVersion"
 
   // Submodules
-  compile project(':basekit')
+  compile project(":basekit")
+  compile project(":basekit-support")
+
+  // DebugOverlay (for displaying delegates methods)
+  compile "com.hannesdorfmann:debugoverlay:0.2.1"
 }

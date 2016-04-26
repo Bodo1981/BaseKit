@@ -1,12 +1,14 @@
 package com.christianbahl.basekit.sample.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import com.christianbahl.basekit.activity.delegate.CBIActivityDelegate;
+import com.christianbahl.basekit.common.activity.CBIActivityDelegate;
+import com.hannesdorfmann.debugoverlay.DebugOverlay;
 
 /**
  * Created by bodo on 20.04.16.
@@ -15,130 +17,202 @@ public class ActivityDelegateImpl implements CBIActivityDelegate {
 
   private static final String TAG = "ActivityDelegateImpl";
 
+  private Context context;
+
+  public ActivityDelegateImpl(Context context) {
+    this.context = context;
+  }
+
   @Override public void onCreate(Bundle savedInstanceState) {
-    Log.d(TAG, "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
+    String msg = "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-    Log.d(TAG, "onCreate() called with: "
+    String msg = "onCreate() called with: "
         + "savedInstanceState = ["
         + savedInstanceState
         + "], persistentState = ["
         + persistentState
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onRestart() {
-    Log.d(TAG, "onRestart() called with: " + "");
+    String msg = "onRestart() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onSaveInstanceState(Bundle outState) {
-    Log.d(TAG, "onSaveInstanceState() called with: " + "outState = [" + outState + "]");
+    String msg = "onSaveInstanceState() called with: " + "outState = [" + outState + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-    Log.d(TAG, "onSaveInstanceState() called with: "
+    String msg = "onSaveInstanceState() called with: "
         + "outState = ["
         + outState
         + "], outPersistentState = ["
         + outPersistentState
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onRestoreInstanceState(Bundle savedInstanceState) {
-    Log.d(TAG, "onRestoreInstanceState() called with: "
+    String msg = "onRestoreInstanceState() called with: "
         + "savedInstanceState = ["
         + savedInstanceState
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override
   public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
-    Log.d(TAG, "onRestoreInstanceState() called with: "
+    String msg = "onRestoreInstanceState() called with: "
         + "savedInstanceState = ["
         + savedInstanceState
         + "], persistentState = ["
         + persistentState
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onNewIntent(Intent intent) {
-    Log.d(TAG, "onNewIntent() called with: " + "intent = [" + intent + "]");
+    String msg = "onNewIntent() called with: " + "intent = [" + intent + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onStart() {
-    Log.d(TAG, "onStart() called with: " + "");
+    String msg = "onStart() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onResume() {
-    Log.d(TAG, "onResume() called with: " + "");
+    String msg = "onResume() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onPause() {
-    Log.d(TAG, "onPause() called with: " + "");
+    String msg = "onPause() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onStop() {
-    Log.d(TAG, "onStop() called with: " + "");
+    String msg = "onStop() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onDestroy() {
-    Log.d(TAG, "onDestroy() called with: " + "");
+    String msg = "onDestroy() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onBackPressed() {
-    Log.d(TAG, "onBackPressed() called with: " + "");
+    String msg = "onBackPressed() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onAttachedToWindow() {
-    Log.d(TAG, "onAttachedToWindow() called with: " + "");
+    String msg = "onAttachedToWindow() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onDetachedFromWindow() {
-    Log.d(TAG, "onDetachedFromWindow() called with: " + "");
+    String msg = "onDetachedFromWindow() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onConfigurationChanged(Configuration newConfig) {
-    Log.d(TAG, "onConfigurationChanged() called with: " + "newConfig = [" + newConfig + "]");
+    String msg = "onConfigurationChanged() called with: " + "newConfig = [" + newConfig + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    Log.d(TAG, "onActivityResult() called with: "
+    String msg = "onActivityResult() called with: "
         + "requestCode = ["
         + requestCode
         + "], resultCode = ["
         + resultCode
         + "], data = ["
         + data
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
       @NonNull int[] grantResults) {
-    Log.d(TAG, "onRequestPermissionsResult() called with: "
+    String msg = "onRequestPermissionsResult() called with: "
         + "requestCode = ["
         + requestCode
         + "], permissions = ["
         + permissions
         + "], grantResults = ["
         + grantResults
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void startActivity(Intent intent) {
-    Log.d(TAG, "startActivity() called with: " + "intent = [" + intent + "]");
+    String msg = "startActivity() called with: " + "intent = [" + intent + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void startActivityForResult(Intent intent, int requestCode) {
-    Log.d(TAG, "startActivityForResult() called with: "
+    String msg = "startActivityForResult() called with: "
         + "intent = ["
         + intent
         + "], requestCode = ["
         + requestCode
-        + "]");
+        + "]";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 
   @Override public void finish() {
-    Log.d(TAG, "finish() called with: " + "");
+    String msg = "finish() called with: " + "";
+
+    DebugOverlay.with(context).log(TAG + " - "  + msg);
+    Log.d(TAG, msg);
   }
 }

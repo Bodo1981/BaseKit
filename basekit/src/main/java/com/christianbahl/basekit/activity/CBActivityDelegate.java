@@ -1,17 +1,17 @@
 package com.christianbahl.basekit.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import com.christianbahl.basekit.activity.delegate.CBActivityDelegateManager;
+import com.christianbahl.basekit.common.activity.CBActivityDelegateManager;
 
 /**
- * Created by bodo on 14.04.16.
+ * Created by bodo on 25.04.16.
  */
-public class CBActivityDelegate extends AppCompatActivity {
+public class CBActivityDelegate extends Activity {
 
   protected CBActivityDelegateManager delegateManager = new CBActivityDelegateManager();
 
@@ -157,4 +157,5 @@ public class CBActivityDelegate extends AppCompatActivity {
 
     delegateManager.finish();
   }
+
 }

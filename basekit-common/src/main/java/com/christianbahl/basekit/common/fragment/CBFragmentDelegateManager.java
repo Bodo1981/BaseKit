@@ -1,4 +1,4 @@
-package com.christianbahl.basekit.fragment.delegate;
+package com.christianbahl.basekit.common.fragment;
 
 import android.app.Activity;
 import android.content.Context;
