@@ -2,7 +2,7 @@
 
 > Favor composition over inheritance
 
-This library is for breaking your monster activity / fragment into small peaces. You can/shoul write one class for a specific task and hook it into a delegation manager in your activity / fragment.
+This library is for breaking your monster activity / fragment into small peaces. You can/should write one class for a every task and hook it into a delegation manager in your activity / fragment.
 
 ## Dependencies
 Newest Version (Jcenter):
