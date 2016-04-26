@@ -30,7 +30,7 @@ dependencies {
   testCompile "junit:junit:$junitVersion"
 
   // Submodules
-  compile project(':basekit-common')
+  compile project(':common')
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'

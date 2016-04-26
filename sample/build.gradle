@@ -27,8 +27,8 @@ dependencies {
   testCompile "junit:junit:$junitVersion"
 
   // Submodules
-  compile project(":basekit")
-  compile project(":basekit-support")
+  compile project(':core')
+  compile project(':support')
 
   // DebugOverlay (for displaying delegates methods)
   compile "com.hannesdorfmann:debugoverlay:0.2.1"
