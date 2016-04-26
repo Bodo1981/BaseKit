@@ -7,8 +7,7 @@ Newest Version (Jcenter):
 
     dependencies {
         compile 'com.christianbahl.basekit:core:1.0.0'
-        compile 'com.christianbahl.basekit:viewstate:1.0.0'
-        compile 'com.christianbahl.basekit:rx:1.0.0'
+        compile 'com.christianbahl.basekit:support:1.0.0'
     }
 
 #Changelog
